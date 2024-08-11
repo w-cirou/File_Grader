@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0f79eca9-77f8-4ae3-9742-f76b2a8c19e3" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2jnfTAyrf0jXgFGuSHXlS0Vo7nu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Utils.executor": "Run",
+    "JUnit.FileProcessorTest.test2.executor": "Run",
+    "JUnit.FileProcessorTest.testHandleRequest.executor": "Run",
+    "JUnit.GetAverageGradeTest.getAverageGradeTest.executor": "Run",
+    "JUnit.GetGradesForAssignmentTest.getGradesForAssignmentTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/wyatt/OneDrive/Desktop/Portfolio Projects/File-Processor-Application/File-Processor/src/main",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wyatt\OneDrive\Desktop\Portfolio Projects\File-Processor-Application\File-Processor\src\main" />
+      <recent name="C:\Users\wyatt\OneDrive\Desktop\Portfolio Projects\File-Processor-Application\File-Processor\src\main\java\dev.wcirou" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wyatt\OneDrive\Desktop\Portfolio Projects\File-Processor-Application" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.GetGradesForAssignmentTest.getGradesForAssignmentTest">
+    <configuration name="Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.wcirou.Utils" />
+      <module name="File-Processor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.wcirou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileProcessorTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="File-Processor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.wcirou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.wcirou" />
+      <option name="MAIN_CLASS_NAME" value="dev.wcirou.FileProcessorTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileProcessorTest.testHandleRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="File-Processor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.wcirou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.wcirou" />
+      <option name="MAIN_CLASS_NAME" value="dev.wcirou.FileProcessorTest" />
+      <option name="METHOD_NAME" value="testHandleRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetAverageGradeTest.getAverageGradeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="File-Processor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.wcirou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.wcirou" />
+      <option name="MAIN_CLASS_NAME" value="dev.wcirou.GetAverageGradeTest" />
+      <option name="METHOD_NAME" value="getAverageGradeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetGradesForAssignmentTest.getGradesForAssignmentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="File-Processor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.wcirou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.wcirou" />
+      <option name="MAIN_CLASS_NAME" value="dev.wcirou.GetGradesForAssignmentTest" />
+      <option name="METHOD_NAME" value="getGradesForAssignmentTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GetGradesForAssignmentTest.getGradesForAssignmentTest" />
+        <item itemvalue="JUnit.GetAverageGradeTest.getAverageGradeTest" />
+        <item itemvalue="JUnit.FileProcessorTest.test2" />
+        <item itemvalue="JUnit.FileProcessorTest.testHandleRequest" />
+        <item itemvalue="Application.Utils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f79eca9-77f8-4ae3-9742-f76b2a8c19e3" name="Changes" comment="" />
+      <created>1722027768658</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722027768658</updated>
+    </task>
+    <servers />
+  </component>
+</project>

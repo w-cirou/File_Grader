@@ -1,0 +1,122 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  File-Processor-App
+
+  SAM Template for File-Processor-App
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Tracing: Active
+    Timeout: 20
+  Api:
+    TracingEnabled: true
+Resources:
+
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: wcirou-files-to-be-graded
+      LifecycleConfiguration:
+        Rules:
+          - Id: DeleteAfter30Days
+            Status: Enabled
+            ExpirationInDays: 30
+
+  FileProcessorFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: File-Processor
+      Handler: dev.wcirou.FileProcessor::handleRequest
+      Runtime: java21
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonS3ReadOnlyAccess
+        - AmazonSQSFullAccess
+      Environment:
+        Variables:
+          QUEUE_NAME: QueueForGrades
+
+  InsertGradesToDynamoDBFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: File-Processor
+      Handler: dev.wcirou.InsertGradesToDynamoDB::handleRequest
+      Runtime: java21
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonSQSFullAccess
+        - DynamoDBCrudPolicy:
+            TableName: !Ref StudentGradesTable
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref StudentGradesTable
+      Events:
+        MySQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt QueueForGrades.Arn
+            BatchSize: 10
+            Enabled: true
+
+  GetAverageGrade:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: File-Processor
+      Handler: dev.wcirou.GetAverageGrade::handleRequest
+      Runtime: java21
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref StudentGradesTable
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref StudentGradesTable
+
+  GetGradesForAssignment:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: File-Processor
+      Handler: dev.wcirou.GetGradesForAssignment::handleRequest
+      Runtime: java21
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref StudentGradesTable
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref StudentGradesTable
+
+  QueueForGrades:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: 'QueueForGrades'
+      VisibilityTimeout: 30
+      MessageRetentionPeriod: 86400 # 1 day
+
+  StudentGradesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: StudentGrades
+      BillingMode: PAY_PER_REQUEST # On-Demand Capacity
+      AttributeDefinitions:
+        - AttributeName: AssignmentName
+          AttributeType: S
+        - AttributeName: StudentName
+          AttributeType: S
+      KeySchema:
+        - AttributeName: AssignmentName
+          KeyType: HASH
+        - AttributeName: StudentName
+          KeyType: RANGE
